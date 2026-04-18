@@ -1,0 +1,11 @@
+# Fichiers lourds inutiles sur GitHub
+selenium-server-*.jar
+composer.phar
+vendor/
+
+# Rapports générés
+reports/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
