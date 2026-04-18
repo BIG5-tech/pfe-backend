@@ -1,4 +1,4 @@
-CREATE TABLE dashboard_preferences (
+REATE TABLE dashboard_preferences (
     id INT AUTO_INCREMENT PRIMARY KEY,
     student_id INT NOT NULL UNIQUE,
     project_filter VARCHAR(50) DEFAULT NULL,
