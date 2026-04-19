@@ -9,3 +9,5 @@ reports/
 # Fichiers système
 .DS_Store
 Thumbs.db
+selenium-server-*.jar
+composer.phar
