@@ -1,4 +1,5 @@
 <?php
+//la sécurité(cors)
 header("Access-Control-Allow-Origin: http://localhost:4200");
 header("Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
@@ -8,10 +9,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit();
 }
-
+//analyse de l'URL
 $uri    = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $method = $_SERVER['REQUEST_METHOD'];
-
+//Les Systèmes de Routages (Les conditions)
 if (preg_match('/\/api\/dashboard\/(\d+)$/', $uri, $m) && $method === 'GET') {
     require 'controllers/DashboardController.php';
     $ctrl = new DashboardController();
@@ -46,7 +47,7 @@ if (preg_match('/\/api\/dashboard\/(\d+)$/', $uri, $m) && $method === 'GET') {
     require 'controllers/StudentController.php';
     $ctrl = new StudentController();
     $ctrl->createStudent();
-
+//la réponse d'erreur
 } else {
     http_response_code(404);
     echo json_encode(["message" => "Route introuvable"]);

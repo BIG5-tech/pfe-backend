@@ -9,7 +9,7 @@ class ProjectController {
         $db = new Database();
         $this->conn = $db->getConnection();
     }
-
+    //filtrer les projets d'un "tudiant par statut ou catégorie
     public function filterProjects($studentId) {
         $body   = json_decode(file_get_contents("php://input"), true);
         $status   = $body['status']   ?? null;
