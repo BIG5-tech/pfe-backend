@@ -9,7 +9,7 @@ class NotificationController {
         $db = new Database();
         $this->conn = $db->getConnection();
     }
-
+    //récupérer les notification d'un étudiant
     public function getNotifications($studentId) {
         $unreadOnly = $_GET['unreadOnly'] ?? 'false';
 
@@ -24,7 +24,7 @@ class NotificationController {
         $stmt->execute($params);
         echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
     }
-
+    //marquer une notification comme lue
     public function markAsRead($notifId) {
         $stmt = $this->conn->prepare(
             "UPDATE notifications SET is_read = 1 WHERE id = ?"

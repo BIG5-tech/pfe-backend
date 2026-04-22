@@ -1,5 +1,6 @@
 <?php
 // controllers/PreferenceController.php
+//fait l'appel de la base de données
 require_once 'config/database.php';
 
 class PreferenceController {
@@ -7,6 +8,7 @@ class PreferenceController {
 
     public function __construct() {
         $db = new Database();
+        //Crée et retourne une connexion PDO à MySQL
         $this->conn = $db->getConnection();
     }
 

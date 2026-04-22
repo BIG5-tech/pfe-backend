@@ -9,7 +9,7 @@ class CompteRenduController {
         $db = new Database();
         $this->conn = $db->getConnection();
     }
-
+    //récupérer les comptes rendus d'un étudiant avec tri
     public function getComptesRendus($studentId) {
         $sortBy = $_GET['sortBy'] ?? 'DATE';
 

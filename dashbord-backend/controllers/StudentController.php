@@ -38,6 +38,7 @@ class StudentController {
              VALUES (?, ?, ?, ?, 'etudiant', ?, 1)"
         );
         $stmt->execute([$nom, $prenom, $email, $passwordHash, $passwordHash]);
+        //récupérer l'id du user créé
         $userId = $this->conn->lastInsertId();
 
         // Insérer dans students

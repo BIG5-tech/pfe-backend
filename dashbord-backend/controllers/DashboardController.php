@@ -9,7 +9,7 @@ class DashboardController {
         $db = new Database();
         $this->conn = $db->getConnection();
     }
-
+    //récupérer TOUTES les données du dashboard en une seule requéte
     public function getDashboard($studentId) {
         $data = [];
 
